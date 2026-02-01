@@ -1,0 +1,16 @@
+@import "tailwindcss";
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+/* change html with data-theme="dark" */
+@theme {
+  --color-primary: oklch(0.6576 0.1912 37.56);
+  --color-background-light: oklch(0.9747 0.0021 17.19);
+  --color-background-dark: oklch(0.2113 0.0236 41.91);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
