@@ -3,11 +3,11 @@ import {
   ActionBar,
   CustomerInfo,
   DetailOrderItem,
-  Header,
   OrderItemsList,
   PaymentSummary,
   StatusCard,
 } from "./components";
+import { HeaderTitle } from "@/components";
 
 const ORDER_DATA = {
   orderId: "1234",
@@ -50,14 +50,21 @@ const ORDER_DATA = {
 export const DetailOrder = () => {
   const navigate = useNavigate();
   const { orderId: orderIdParam } = useParams<{ orderId: string }>();
-  const { orderId, statusLabel, tableName, updatedAt, customer, items, payment } =
-    ORDER_DATA;
+  const {
+    orderId,
+    statusLabel,
+    tableName,
+    updatedAt,
+    customer,
+    items,
+    payment,
+  } = ORDER_DATA;
   const displayOrderId = orderIdParam ?? orderId;
 
   return (
-    <div className="bg-background-light dark:bg-background-dark text-[#181311] dark:text-gray-100">
+    <div className="bg-background-light dark:bg-background-dark text-blackCustom dark:text-gray-100">
       <div className="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden pb-24">
-        <Header orderId={displayOrderId} onBack={() => navigate(-1)} />
+        <HeaderTitle title={`Đơn hàng${displayOrderId}`} />
         <StatusCard
           statusLabel={statusLabel}
           tableName={tableName}

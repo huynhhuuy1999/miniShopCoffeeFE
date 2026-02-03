@@ -17,7 +17,7 @@ export const CardOrderItem: React.FC<ICardOrderItem> = ({
           </span>
         </div>
         <div className="flex flex-col">
-          <p className="text-sm font-bold text-[#181311] dark:text-white">
+          <p className="text-sm font-bold text-blackCustom dark:text-white">
             {name}
           </p>
           <p className="text-xs text-gray-500 dark:text-gray-400">

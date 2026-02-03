@@ -7,6 +7,7 @@ export default {
         primary: "#ee5b2b",
         "background-light": "#f8f6f6",
         "background-dark": "#221510",
+        blackCustom: "#181311",
       },
       fontFamily: {
         display: ["Work Sans", "sans-serif"],

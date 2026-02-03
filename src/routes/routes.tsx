@@ -1,4 +1,3 @@
-import App from "@/App";
 import { MainLayout } from "@/layouts";
 import { Home } from "@/pages/Home";
 import { Users } from "@/pages/Users";
@@ -9,6 +8,8 @@ import { createBrowserRouter } from "react-router";
 import { Test } from "@/pages/test";
 import { Order } from "@/pages/Order";
 import { DetailOrder } from "@/pages/DetailOrder";
+import { InfoPersonal } from "@/pages/InfoPersonal";
+import { UpdateUser } from "@/pages/UpdateUser";
 
 export const router = createBrowserRouter([
   // {
@@ -22,6 +23,14 @@ export const router = createBrowserRouter([
   {
     path: "/orders/:orderId",
     element: <DetailOrder />,
+  },
+  {
+    path: "/info-personal",
+    element: <InfoPersonal />,
+  },
+  {
+    path: "/update-user",
+    element: <UpdateUser />,
   },
   {
     path: "/",

@@ -10,7 +10,7 @@ export const MainLayout = () => {
   }, [pathname]);
 
   return (
-    <div className="bg-background-light dark:bg-background-dark font-display text-[#181311] dark:text-white h-screen flex flex-col overflow-hidden">
+    <div className="bg-background-light dark:bg-background-dark font-display text-blackCustom dark:text-white h-screen flex flex-col overflow-hidden">
       <main ref={mainRef} className="flex-1 overflow-y-auto no-scrollbar pb-24">
         <Outlet />
       </main>

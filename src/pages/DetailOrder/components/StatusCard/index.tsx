@@ -29,7 +29,7 @@ export const StatusCard: React.FC<StatusCardProps> = ({
           </span>
         </div>
         <div>
-          <h3 className="text-2xl font-bold text-[#181311] dark:text-white mb-1">
+          <h3 className="text-2xl font-bold text-blackCustom dark:text-white mb-1">
             {tableName}
           </h3>
           <p className="text-[#896b61] dark:text-gray-300 text-sm">

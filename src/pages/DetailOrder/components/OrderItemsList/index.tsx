@@ -13,7 +13,7 @@ export const OrderItemsList: React.FC<OrderItemsListProps> = ({
 }) => {
   return (
     <div className="px-4 mt-4">
-      <h3 className="text-[#181311] dark:text-white text-base font-bold leading-tight px-1 mb-3">
+      <h3 className="text-blackCustom dark:text-white text-base font-bold leading-tight px-1 mb-3">
         {title} ({count})
       </h3>
       <div className="flex flex-col gap-3">{children}</div>

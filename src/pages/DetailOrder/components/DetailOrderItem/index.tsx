@@ -28,10 +28,10 @@ export const DetailOrderItem: React.FC<DetailOrderItemProps> = ({
       />
       <div className="flex flex-col flex-1 h-full justify-between">
         <div className="flex justify-between items-start w-full">
-          <p className="text-[#181311] dark:text-white text-base font-semibold leading-tight line-clamp-1">
+          <p className="text-blackCustom dark:text-white text-base font-semibold leading-tight line-clamp-1">
             {name}
           </p>
-          <p className="text-[#181311] dark:text-white text-base font-bold shrink-0">
+          <p className="text-blackCustom dark:text-white text-base font-bold shrink-0">
             {price}
           </p>
         </div>
@@ -41,7 +41,7 @@ export const DetailOrderItem: React.FC<DetailOrderItemProps> = ({
           </p>
         )}
         {note && (
-          <p className="text-[#896b61] dark:text-gray-400 text-sm mt-0.5 italic text-primary">
+          <p className="dark:text-gray-400 text-sm mt-0.5 italic text-primary">
             Ghi chú: {note}
           </p>
         )}
@@ -51,7 +51,7 @@ export const DetailOrderItem: React.FC<DetailOrderItemProps> = ({
           </p>
         )}
         <div className="flex items-center gap-2 mt-2">
-          <span className="bg-gray-100 dark:bg-white/10 text-xs font-bold px-2 py-0.5 rounded text-[#181311] dark:text-gray-200">
+          <span className="bg-gray-100 dark:bg-white/10 text-xs font-bold px-2 py-0.5 rounded text-blackCustom dark:text-gray-200">
             x{quantity}
           </span>
           {unitPrice && (

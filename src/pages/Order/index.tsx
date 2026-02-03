@@ -1,13 +1,7 @@
 import { useState } from "react";
 import type { OrderStatus } from "./components/OrderCard";
-import {
-  EmptyState,
-  Header,
-  OrderCard,
-  OrderFilter,
-  SearchBar,
-} from "./components";
-import { Plus } from "@/components";
+import { EmptyState, OrderCard, OrderFilter, SearchBar } from "./components";
+import { HeaderTitle, Plus } from "@/components";
 
 type OrderFilterValue = "all" | "pending" | "preparing" | "completed";
 
@@ -80,7 +74,7 @@ export const Order = () => {
   return (
     <div className="bg-background-light dark:bg-background-dark text-text-main dark:text-white antialiased transition-colors duration-200">
       <div className="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto shadow-2xl bg-background-light dark:bg-background-dark">
-        <Header onBack={() => {}} onAdd={() => {}} />
+        <HeaderTitle title="Quản lý Đơn hàng" />
         <SearchBar value={search} onChange={setSearch} />
         <OrderFilter value={filter} onChange={setFilter} />
 

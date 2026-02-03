@@ -1,13 +1,28 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
+import { useAuthStore } from "@/stores/auth";
 import { Header, InputCustom, Welcome } from "./components";
+import { ButtonCustom } from "@/components";
 
 export const Login = () => {
+  const navigate = useNavigate();
+  const { login, loading, error, setError } = useAuthStore();
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
-  const handleLogin = () => {
-    console.log(username, password);
+  const handleLogin = async () => {
+    if (!username.trim() || !password.trim()) {
+      setError("Vui lòng nhập username và mật khẩu");
+      return;
+    }
+    setError(null);
+    try {
+      await login({ username: username.trim(), password });
+      navigate("/", { replace: true });
+    } catch {
+      // error đã được set trong store
+    }
   };
 
   return (
@@ -95,16 +110,40 @@ export const Login = () => {
                 Forgot Password?
               </a>
             </div>
+            {error && (
+              <p className="text-red-600 dark:text-red-400 text-sm mt-1">
+                {error}
+              </p>
+            )}
             {/* <!-- Login Button --> */}
-            <button
+            {/* <button
+              type="button"
               onClick={handleLogin}
-              className="w-full h-14 mt-2 bg-primary hover:bg-red-600 active:scale-[0.98] transition-all text-white rounded-xl text-lg font-bold shadow-lg shadow-orange-900/10 flex items-center justify-center gap-2 cursor-pointer"
+              disabled={loading}
+              className="w-full h-14 mt-2 bg-primary hover:bg-red-600 active:scale-[0.98] transition-all text-white rounded-xl text-lg font-bold shadow-lg shadow-orange-900/10 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
             >
-              <span>Login</span>
-              <span className="material-symbols-outlined text-[20px]">
-                Login
-              </span>
-            </button>
+              {loading ? (
+                <span>Đang đăng nhập...</span>
+              ) : (
+                <>
+                  <span>Login</span>
+                  <span className="material-symbols-outlined text-[20px]">
+                    login
+                  </span>
+                </>
+              )}
+            </button> */}
+            <ButtonCustom
+              onClick={handleLogin}
+              loading={loading}
+              textLoading="Đang đăng nhập..."
+              icon={
+                <span className="material-symbols-outlined text-[20px]">
+                  login
+                </span>
+              }
+              text="Đăng nhập"
+            />
           </div>
         </div>
       </div>

@@ -1,12 +1,11 @@
 import { useState } from "react";
 import {
-  Header,
   MenuFilter,
   MenuItemCard,
   SectionHeader,
   SearchBar,
 } from "./components";
-import { Plus } from "@/components";
+import { HeaderTitle, Plus } from "@/components";
 
 const MENU_ITEMS = [
   {
@@ -85,7 +84,8 @@ export const Menu = () => {
     <div className="bg-background-light dark:bg-background-dark font-display antialiased text-text-main dark:text-white">
       <div className="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-white dark:bg-[#2a1a14] shadow-xl">
         <header className="sticky top-0 z-50 bg-white/95 dark:bg-[#2a1a14]/95 backdrop-blur-sm border-b border-gray-100 dark:border-gray-800">
-          <Header onBack={() => {}} onAdd={() => {}} />
+          {/* <Header onBack={() => {}} onAdd={() => {}} /> */}
+          <HeaderTitle title="Thực đơn" />
           <SearchBar value={search} onChange={setSearch} />
           <MenuFilter value={filter} onChange={setFilter} />
         </header>

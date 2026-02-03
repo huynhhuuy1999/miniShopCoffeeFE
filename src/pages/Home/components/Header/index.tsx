@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router";
+
 export const Header = () => {
+  const navigate = useNavigate();
   return (
     <div className="sticky top-0 z-20 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm px-4 pt-6 pb-2 flex items-center justify-between border-b border-gray-100 dark:border-gray-800">
       <div className="flex items-center gap-3">
@@ -9,6 +12,7 @@ export const Header = () => {
             backgroundImage:
               "url('https://lh3.googleusercontent.com/aida-public/AB6AXuD3h-yUaVA8_yYaoIvZEnRv0G6bi4712JJJCQX_ZfF7HGTsVtQMzVZ77AO8H1X7JHxArCYXfjvvjynkiA8Sm_zFaiTr9n6SIP_142TANy2Vr2V30IJt6HJqMM-R3lj9P5NIjAnN4J0VOrRGScvmOuMGW4OkxZD6C4LBjogtqcwspPD46DkrRRN4hGKWuv4S0m29r0E5g8XAVionGSVis_06jqCFeB2JdwaMMPBaWZGi5vV2Rr4vDZIuTQkX1cQlX_qHnKsuTQEhWLyR')",
           }}
+          onClick={() => navigate("/info-personal")}
         ></div>
         <div>
           <h1 className="text-sm font-medium text-gray-500 dark:text-gray-400 leading-none">
@@ -19,7 +23,7 @@ export const Header = () => {
       </div>
       <button className="relative p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
         <span
-          className="material-symbols-outlined text-[#181311] dark:text-white"
+          className="material-symbols-outlined text-blackCustom dark:text-white"
           style={{ fontSize: "24px" }}
         >
           notifications

@@ -4,8 +4,10 @@ import "./index.css";
 
 import { RouterProvider } from "react-router/dom";
 import { router } from "./routes/routes.tsx";
-// Hoặc nếu bạn chỉ muốn bản Outlined để nhẹ app:
+import { useAuthStore } from "@/stores/auth";
 import "material-symbols/outlined.css";
+
+useAuthStore.getState().hydrate();
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
