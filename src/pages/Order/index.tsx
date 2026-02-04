@@ -2,6 +2,7 @@ import { useState } from "react";
 import type { OrderStatus } from "./components/OrderCard";
 import { EmptyState, OrderCard, OrderFilter, SearchBar } from "./components";
 import { HeaderTitle, Plus } from "@/components";
+import { useNavigate } from "react-router";
 
 type OrderFilterValue = "all" | "pending" | "preparing" | "completed";
 
@@ -64,6 +65,7 @@ const ORDERS_DATA: OrderItem[] = [
 ];
 
 export const Order = () => {
+  const navigate = useNavigate();
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState<OrderFilterValue>("all");
   const [orders] = useState<OrderItem[]>(ORDERS_DATA);
@@ -92,7 +94,9 @@ export const Order = () => {
                   items={order.items}
                   customerName={order.customerName}
                   total={order.total}
-                  onClick={() => {}}
+                  onClick={() => {
+                    navigate(`/orders/${order.id}`);
+                  }}
                 />
               ))
             )}

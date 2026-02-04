@@ -11,7 +11,7 @@ export const MainLayout = () => {
 
   return (
     <div className="bg-background-light dark:bg-background-dark font-display text-blackCustom dark:text-white h-screen flex flex-col overflow-hidden">
-      <main ref={mainRef} className="flex-1 overflow-y-auto no-scrollbar pb-24">
+      <main ref={mainRef} className="flex-1 overflow-y-auto no-scrollbar pb-10">
         <Outlet />
       </main>
 
@@ -84,6 +84,19 @@ export const MainLayout = () => {
         >
           <span className="material-symbols-outlined">table_restaurant</span>
           <span className="text-[10px] font-medium">Bàn</span>
+        </NavLink>
+        <NavLink
+          to="/users"
+          className={({ isActive }) =>
+            `flex flex-col items-center gap-1 p-2 transition-colors ${
+              isActive
+                ? "text-primary"
+                : "text-gray-400 dark:text-gray-500 hover:text-primary dark:hover:text-primary"
+            }`
+          }
+        >
+          <span className="material-symbols-outlined">contacts_product</span>
+          <span className="text-[10px] font-medium">Nhân viên</span>
         </NavLink>
       </nav>
     </div>

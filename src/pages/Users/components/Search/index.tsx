@@ -1,0 +1,18 @@
+export const Search = () => {
+  return (
+    <div className="px-4 py-3 w-full">
+      <label className="flex flex-col min-w-40 h-12 w-full">
+        <div className="flex w-full flex-1 items-stretch rounded-xl h-full shadow-sm">
+          <div className="text-gray-400 flex border-none bg-white dark:bg-[#332520] items-center justify-center pl-4 rounded-l-xl border-r-0">
+            <span className="material-symbols-outlined">search</span>
+          </div>
+          <input
+            className="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-xl text-[#181311] dark:text-white focus:outline-0 focus:ring-0 border-none bg-white dark:bg-[#332520] h-full placeholder:text-gray-400 px-4 pl-2 text-base font-normal leading-normal font-display"
+            placeholder="Tìm kiếm nhân viên..."
+            value=""
+          />
+        </div>
+      </label>
+    </div>
+  );
+};

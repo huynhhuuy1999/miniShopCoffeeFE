@@ -1,3 +1,4 @@
+import { TYPE_SELL } from "@/constants";
 import type { ICardOrderItem } from "@/models";
 
 export const CardOrderItem: React.FC<ICardOrderItem> = ({
@@ -11,9 +12,17 @@ export const CardOrderItem: React.FC<ICardOrderItem> = ({
   return (
     <div className="flex items-center justify-between p-3 rounded-xl bg-card-light dark:bg-card-dark border border-gray-100 dark:border-gray-800">
       <div className="flex items-center gap-3">
-        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400">
+        <div
+          className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg ${
+            typeOrder === TYPE_SELL.AT_SHOP
+              ? "bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400"
+              : "bg-orange-50 dark:bg-orange-900/20 text-orange-600 dark:text-orange-400"
+          } `}
+        >
           <span className="material-symbols-outlined text-[20px]">
-            table_restaurant
+            {typeOrder === TYPE_SELL.AT_SHOP
+              ? "table_restaurant"
+              : "shopping_bag"}
           </span>
         </div>
         <div className="flex flex-col">

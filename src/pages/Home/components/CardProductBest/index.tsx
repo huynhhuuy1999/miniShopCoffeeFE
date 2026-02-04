@@ -4,9 +4,13 @@ export const CardProductBest: React.FC<ICardProductBest> = ({
   name,
   image,
   number,
+  onClick,
 }) => {
   return (
-    <div className="min-w-[140px] flex flex-col gap-2 rounded-xl bg-card-light dark:bg-card-dark p-2 border border-gray-100 dark:border-gray-800">
+    <div
+      className="min-w-[140px] flex flex-col gap-2 rounded-xl bg-card-light dark:bg-card-dark p-2 border border-gray-100 dark:border-gray-800"
+      onClick={onClick}
+    >
       <div
         className="aspect-square w-full rounded-lg bg-gray-100 dark:bg-gray-800 bg-cover bg-center"
         data-alt="Close up of a glass of Vietnamese iced milk coffee"

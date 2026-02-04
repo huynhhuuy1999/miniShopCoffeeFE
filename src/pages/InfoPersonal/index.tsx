@@ -20,7 +20,10 @@ export const InfoPersonal = () => {
                 navigate("/update-user");
               }}
             />
-            <button className="w-full mt-4 h-12 text-red-500 font-semibold flex items-center justify-center gap-2">
+            <button
+              className="w-full mt-4 h-12 text-red-500 font-semibold flex items-center justify-center gap-2"
+              onClick={() => navigate("/login")}
+            >
               <span className="material-symbols-outlined">logout</span>
               Đăng xuất
             </button>

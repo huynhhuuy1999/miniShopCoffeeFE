@@ -1,16 +1,19 @@
+import { useNavigate } from "react-router";
+
 interface IHeaderTitle {
   onBack?: () => void;
   title?: string;
 }
 
 export const HeaderTitle: React.FC<IHeaderTitle> = ({ onBack, title }) => {
+  const navigate = useNavigate();
   return (
-    <div className="sticky top-0 z-50 bg-white/95 dark:bg-[#2a1a14]/95 backdrop-blur-sm border-b border-gray-100 dark:border-gray-800">
+    <div className="fixed w-full top-0 z-50 bg-white/95 dark:bg-[#2a1a14]/95 backdrop-blur-sm border-b border-gray-100 dark:border-gray-800">
       <div className="flex items-center p-4 justify-between">
         <div className="flex items-center gap-3">
           <button
             className="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 dark:hover:bg-white/10 transition-colors"
-            onClick={onBack}
+            onClick={() => onBack ?? navigate(-1)}
           >
             <span className="material-symbols-outlined text-text-main dark:text-white">
               arrow_back_ios_new

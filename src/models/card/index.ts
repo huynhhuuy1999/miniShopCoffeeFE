@@ -19,6 +19,7 @@ export interface ICardProductBest {
   name: string;
   image?: string;
   number?: number;
+  onClick?: () => void;
 }
 
 export interface TableCardProps {

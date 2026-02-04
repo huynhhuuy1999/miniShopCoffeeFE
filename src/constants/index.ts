@@ -6,3 +6,13 @@ export const STORAGE_KEYS = {
   REFRESH_TOKEN: "refresh_token",
   USER: "user",
 } as const;
+
+export const TYPE_SELL = {
+  BRING_BACK: 1,
+  AT_SHOP: 2,
+};
+
+export const TYPE_USER = {
+  ADMIN: 1,
+  STAFF: 2,
+};

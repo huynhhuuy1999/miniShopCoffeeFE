@@ -1,11 +1,10 @@
+import { createBrowserRouter } from "react-router";
 import { MainLayout } from "@/layouts";
 import { Home } from "@/pages/Home";
 import { Users } from "@/pages/Users";
 import { Login } from "@/pages/Login";
 import { Menu } from "@/pages/Menu";
 import { Table } from "@/pages/Tables";
-import { createBrowserRouter } from "react-router";
-import { Test } from "@/pages/test";
 import { Order } from "@/pages/Order";
 import { DetailOrder } from "@/pages/DetailOrder";
 import { InfoPersonal } from "@/pages/InfoPersonal";
@@ -47,10 +46,6 @@ export const router = createBrowserRouter([
       {
         path: "users",
         element: <Users />,
-      },
-      {
-        path: "test",
-        element: <Test />,
       },
       {
         path: "orders",

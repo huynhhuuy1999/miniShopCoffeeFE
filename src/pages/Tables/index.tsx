@@ -2,9 +2,14 @@ import { useState } from "react";
 import type { FilterValue } from "./components/TableFilter";
 import { Header, TableCard, TableFilter } from "./components";
 import { Plus } from "@/components";
+import { useNavigate } from "react-router";
 
 export const Table = () => {
+  const navigate = useNavigate();
   const [filter, setFilter] = useState<FilterValue>("all");
+  const onClickTable = (idOrder: string) => {
+    navigate(`/orders/${idOrder}`);
+  };
 
   return (
     <div className="bg-background-light dark:bg-background-dark font-display text-text-main dark:text-white overflow-x-hidden min-h-screen flex flex-col antialiased selection:bg-primary selection:text-white">
@@ -18,6 +23,7 @@ export const Table = () => {
             occupied
             duration="1h 20m"
             onMore={() => {}}
+            onClick={() => onClickTable("123")}
           />
           <TableCard name="Bàn 02" occupied={false} />
           <TableCard
@@ -25,6 +31,7 @@ export const Table = () => {
             occupied
             duration="0h 45m"
             onMore={() => {}}
+            onClick={() => onClickTable("123")}
           />
           <TableCard name="Bàn 04" occupied={false} />
           <TableCard name="Bàn 05" occupied={false} />

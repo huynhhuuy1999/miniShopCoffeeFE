@@ -1,3 +1,4 @@
+import { TYPE_SELL } from "@/constants";
 import {
   CardOrderItem,
   CardProductBest,
@@ -8,8 +9,10 @@ import {
   Revenue,
   TimeFilter,
 } from "./components";
+import { useNavigate } from "react-router";
 
 export const Home = () => {
+  const navigate = useNavigate();
   return (
     <>
       <Header />
@@ -35,7 +38,7 @@ export const Home = () => {
             numberOfItem={2}
             orderValue={35000}
             statusOrder={1}
-            typeOrder={1}
+            typeOrder={TYPE_SELL.AT_SHOP}
           />
           <CardOrderItem
             name="Mang về"
@@ -43,7 +46,7 @@ export const Home = () => {
             numberOfItem={2}
             orderValue={35000}
             statusOrder={1}
-            typeOrder={1}
+            typeOrder={TYPE_SELL.BRING_BACK}
           />
           <CardOrderItem
             name="Bàn 04"
@@ -51,14 +54,18 @@ export const Home = () => {
             numberOfItem={2}
             orderValue={35000}
             statusOrder={1}
-            typeOrder={1}
+            typeOrder={TYPE_SELL.AT_SHOP}
           />
         </div>
       </div>
       <div className="px-4 pb-6 mt-4">
         <h3 className="text-lg font-bold mb-3">Món bán chạy</h3>
         <div className="flex gap-4 overflow-x-auto no-scrollbar pb-2">
-          <CardProductBest name="Cà phê sữa đá" number={120} />
+          <CardProductBest
+            name="Cà phê sữa đá"
+            number={120}
+            onClick={() => navigate("/menu")}
+          />
           <CardProductBest name="Trà đào cam sả" number={85} />
           <CardProductBest name="Latte nóng" number={60} />
         </div>

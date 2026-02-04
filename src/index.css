@@ -15,3 +15,7 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+.body {
+  min-height: max(884px, 100dvh);
+}
