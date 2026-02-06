@@ -4,9 +4,9 @@ import { GroupInput, InfoAva } from "./components";
 export const UpdateUser = () => {
   return (
     <div className="bg-background-light dark:bg-background-dark font-display antialiased text-text-main dark:text-white">
-      <div className="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-white dark:bg-[#2a1a14] shadow-xl">
+      <div className="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-background-light dark:bg-background-dark font-display antialiased text-text-main dark:text-white shadow-xl">
         <HeaderTitle title="Thông tin cá nhân" />
-        <div className="flex-1 flex flex-col p-6 gap-8">
+        <div className="flex-1 flex flex-col p-6 gap-8 relative pt-18">
           <InfoAva />
           <GroupInput />
           <div className="flex flex-col gap-3 mt-4">

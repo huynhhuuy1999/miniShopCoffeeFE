@@ -8,7 +8,7 @@ interface IHeaderTitle {
 export const HeaderTitle: React.FC<IHeaderTitle> = ({ onBack, title }) => {
   const navigate = useNavigate();
   return (
-    <div className="fixed w-full top-0 z-50 bg-white/95 dark:bg-[#2a1a14]/95 backdrop-blur-sm border-b border-gray-100 dark:border-gray-800">
+    <div className="fixed w-full h-16 top-0 z-50 bg-white/95 dark:bg-[#2a1a14]/95 backdrop-blur-sm border-b border-gray-100 dark:border-gray-800 max-w-md">
       <div className="flex items-center p-4 justify-between">
         <div className="flex items-center gap-3">
           <button

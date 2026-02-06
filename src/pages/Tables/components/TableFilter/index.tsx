@@ -23,7 +23,7 @@ export const TableFilter: React.FC<TableFilterProps> = ({
   options = DEFAULT_OPTIONS,
 }) => {
   return (
-    <div className="px-4 py-4 sticky top-[64px] z-20 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm">
+    <div className="px-4 py-4 w-full max-w-md fixed top-16 z-20 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm">
       <div className="flex p-1 bg-gray-200/60 dark:bg-white/5 rounded-xl">
         {options.map((opt) => (
           <label

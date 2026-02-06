@@ -6,6 +6,7 @@
   --color-background-light: oklch(0.9747 0.0021 17.19);
   --color-background-dark: oklch(0.2113 0.0236 41.91);
   --color-blackCustom: oklch(0.1921 0.0092 43.03);
+  --color-card-dark: oklch(0.2659 0.0221 42.02);
 }
 
 .no-scrollbar::-webkit-scrollbar {
@@ -18,4 +19,8 @@
 
 .body {
   min-height: max(884px, 100dvh);
+}
+
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 20px);
 }

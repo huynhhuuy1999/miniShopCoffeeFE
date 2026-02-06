@@ -63,37 +63,39 @@ export const DetailOrder = () => {
 
   return (
     <div className="bg-background-light dark:bg-background-dark text-blackCustom dark:text-gray-100">
-      <div className="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden pb-24">
+      <div className="relative flex mx-auto h-full min-h-screen w-full flex-col overflow-x-hidden pb-24 max-w-md">
         <HeaderTitle title={`Đơn hàng${displayOrderId}`} />
-        <StatusCard
-          statusLabel={statusLabel}
-          tableName={tableName}
-          updatedAt={updatedAt}
-        />
-        <CustomerInfo
-          customerName={customer.name}
-          phone={customer.phone}
-          note={customer.note}
-        />
-        <OrderItemsList title="Danh sách món" count={items.length}>
-          {items.map((item) => (
-            <DetailOrderItem
-              key={item.id}
-              name={item.name}
-              price={item.price}
-              options={item.options}
-              note={item.note}
-              quantity={item.quantity}
-              imageUrl={item.imageUrl}
-              unitPrice={item.unitPrice}
-            />
-          ))}
-        </OrderItemsList>
-        <PaymentSummary
-          subtotal={payment.subtotal}
-          discount={payment.discount}
-          total={payment.total}
-        />
+        <div className="mt-16">
+          <StatusCard
+            statusLabel={statusLabel}
+            tableName={tableName}
+            updatedAt={updatedAt}
+          />
+          <CustomerInfo
+            customerName={customer.name}
+            phone={customer.phone}
+            note={customer.note}
+          />
+          <OrderItemsList title="Danh sách món" count={items.length}>
+            {items.map((item) => (
+              <DetailOrderItem
+                key={item.id}
+                name={item.name}
+                price={item.price}
+                options={item.options}
+                note={item.note}
+                quantity={item.quantity}
+                imageUrl={item.imageUrl}
+                unitPrice={item.unitPrice}
+              />
+            ))}
+          </OrderItemsList>
+          <PaymentSummary
+            subtotal={payment.subtotal}
+            discount={payment.discount}
+            total={payment.total}
+          />
+        </div>
         <ActionBar onCancel={() => {}} onComplete={() => {}} />
       </div>
     </div>

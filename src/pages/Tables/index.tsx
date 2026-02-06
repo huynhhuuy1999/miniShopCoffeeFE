@@ -15,8 +15,7 @@ export const Table = () => {
     <div className="bg-background-light dark:bg-background-dark font-display text-text-main dark:text-white overflow-x-hidden min-h-screen flex flex-col antialiased selection:bg-primary selection:text-white">
       <Header />
       <TableFilter value={filter} onChange={setFilter} />
-
-      <main className="flex-1 px-4 pb-28">
+      <div className="flex-1 px-4 mt-[38%]">
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 md:gap-4">
           <TableCard
             name="Bàn 01"
@@ -44,7 +43,7 @@ export const Table = () => {
           <TableCard name="Bàn 07" occupied={false} />
           <TableCard name="Bàn 08" occupied={false} />
         </div>
-      </main>
+      </div>
 
       <Plus />
     </div>

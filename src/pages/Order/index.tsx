@@ -1,7 +1,7 @@
 import { useState } from "react";
 import type { OrderStatus } from "./components/OrderCard";
-import { EmptyState, OrderCard, OrderFilter, SearchBar } from "./components";
-import { HeaderTitle, Plus } from "@/components";
+import { EmptyState, OrderCard, OrderFilter } from "./components";
+import { HeaderTitle, Plus, SearchBar } from "@/components";
 import { useNavigate } from "react-router";
 
 type OrderFilterValue = "all" | "pending" | "preparing" | "completed";
@@ -62,6 +62,42 @@ const ORDERS_DATA: OrderItem[] = [
     customerName: "Khách vãng lai",
     total: "45.000đ",
   },
+  {
+    id: "6",
+    orderId: "ORD-10232",
+    timeLabel: "09:50 AM",
+    status: "completed",
+    items: ["4x Trà sữa trân châu"],
+    customerName: "Nhóm Cty ABC",
+    total: "140.000đ",
+  },
+  {
+    id: "7",
+    orderId: "ORD-10231",
+    timeLabel: "09:10 AM",
+    status: "cancelled",
+    items: ["1x Cappuccino"],
+    customerName: "Khách vãng lai",
+    total: "45.000đ",
+  },
+  {
+    id: "8",
+    orderId: "ORD-10232",
+    timeLabel: "09:50 AM",
+    status: "completed",
+    items: ["4x Trà sữa trân châu"],
+    customerName: "Nhóm Cty ABC",
+    total: "140.000đ",
+  },
+  {
+    id: "9",
+    orderId: "ORD-10231",
+    timeLabel: "09:10 AM",
+    status: "cancelled",
+    items: ["1x Cappuccino"],
+    customerName: "Khách vãng lai",
+    total: "45.000đ",
+  },
 ];
 
 export const Order = () => {
@@ -74,37 +110,35 @@ export const Order = () => {
     filter === "all" ? orders : orders.filter((o) => o.status === filter);
 
   return (
-    <div className="bg-background-light dark:bg-background-dark text-text-main dark:text-white antialiased transition-colors duration-200">
-      <div className="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto shadow-2xl bg-background-light dark:bg-background-dark">
-        <HeaderTitle title="Quản lý Đơn hàng" />
+    <div className="mx-auto max-w-md">
+      <HeaderTitle title="Quản lý Đơn hàng" />
+      <div className="fixed top-16 w-full max-w-md z-30 bg-background-light dark:bg-background-dark">
         <SearchBar value={search} onChange={setSearch} />
         <OrderFilter value={filter} onChange={setFilter} />
-
-        <main className="flex-1 flex flex-col w-full pb-20">
-          <div className="flex flex-col gap-4 px-4 mt-2">
-            {filteredOrders.length === 0 ? (
-              <EmptyState />
-            ) : (
-              filteredOrders.map((order) => (
-                <OrderCard
-                  key={order.id}
-                  orderId={order.orderId}
-                  timeLabel={order.timeLabel}
-                  status={order.status}
-                  items={order.items}
-                  customerName={order.customerName}
-                  total={order.total}
-                  onClick={() => {
-                    navigate(`/orders/${order.id}`);
-                  }}
-                />
-              ))
-            )}
-          </div>
-        </main>
-
-        <Plus />
       </div>
+
+      <div className="flex flex-1 w-full antialiased mt-[47%] flex-col gap-4 px-4 h-full overflow-y-scroll">
+        {filteredOrders.length === 0 ? (
+          <EmptyState />
+        ) : (
+          filteredOrders.map((order) => (
+            <OrderCard
+              key={order.id}
+              orderId={order.orderId}
+              timeLabel={order.timeLabel}
+              status={order.status}
+              items={order.items}
+              customerName={order.customerName}
+              total={order.total}
+              onClick={() => {
+                navigate(`/orders/${order.id}`);
+              }}
+            />
+          ))
+        )}
+      </div>
+
+      <Plus />
     </div>
   );
 };

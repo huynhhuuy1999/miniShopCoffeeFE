@@ -5,10 +5,10 @@ import { useNavigate } from "react-router";
 export const InfoPersonal = () => {
   const navigate = useNavigate();
   return (
-    <div className="bg-background-light dark:bg-background-dark font-display antialiased text-text-main dark:text-white">
-      <div className="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-white dark:bg-[#2a1a14] shadow-xl">
+    <div className="bg-background-light dark:bg-background-dark">
+      <div className="relative flex h-full overflow-hidden min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-background-light dark:bg-background-dark font-display antialiased shadow-xl dark:text-white">
         <HeaderTitle title="Hồ sơ cá nhân" />
-        <main className="flex-1 flex flex-col px-6 pb-10">
+        <div className="flex-1 flex flex-col px-6 pt-18 pb-10 relative">
           <InfoAva />
           <Info />
           <FuncGroup />
@@ -28,7 +28,7 @@ export const InfoPersonal = () => {
               Đăng xuất
             </button>
           </div>
-        </main>
+        </div>
       </div>
     </div>
   );

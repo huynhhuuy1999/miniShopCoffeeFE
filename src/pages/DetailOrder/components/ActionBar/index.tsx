@@ -14,7 +14,7 @@ export const ActionBar: React.FC<ActionBarProps> = ({
   completeLabel = "Hoàn tất đơn",
 }) => {
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-surface-light dark:bg-surface-dark border-t border-gray-100 dark:border-white/5 p-4 pb-8 z-40 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] bg-background-light dark:bg-background-dark">
+    <div className="fixed bottom-0 w-full bg-surface-light dark:bg-surface-dark border-t border-gray-100 dark:border-white/5 p-4 pb-8 z-40 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] bg-background-light dark:bg-background-dark max-w-md">
       <div className="flex gap-3">
         <ButtonCustom
           onClick={onCancel ?? (() => {})}

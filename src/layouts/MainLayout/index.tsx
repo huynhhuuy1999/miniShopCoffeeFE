@@ -10,12 +10,15 @@ export const MainLayout = () => {
   }, [pathname]);
 
   return (
-    <div className="bg-background-light dark:bg-background-dark font-display text-blackCustom dark:text-white h-screen flex flex-col overflow-hidden">
-      <main ref={mainRef} className="flex-1 overflow-y-auto no-scrollbar pb-10">
+    <div className="bg-background-light dark:bg-background-dark font-display text-blackCustom dark:text-white h-screen flex flex-col overflow-hidden relative">
+      <main
+        ref={mainRef}
+        className="flex-1 overflow-y-auto no-scrollbar pb-10 max-w-md w-full m-auto shadow-xl"
+      >
         <Outlet />
       </main>
 
-      <nav className="sticky bottom-0 z-30 flex w-full items-center justify-around bg-card-light dark:bg-card-dark border-t border-gray-200 dark:border-gray-800 px-2 pb-safe pt-2 h-[80px]">
+      <nav className="sticky m-auto bottom-0 z-30 flex w-full max-w-md items-center justify-around bg-card-light dark:bg-card-dark border-t border-gray-200 dark:border-gray-800 px-2 pb-safe pt-2 h-[80px]">
         <NavLink
           to="/"
           className={({ isActive }) =>

@@ -1,6 +1,6 @@
 export const FilterUser = () => {
   return (
-    <div className="flex gap-3 px-4 pb-4 overflow-x-auto no-scrollbar">
+    <div className="flex items-center gap-3 px-4 pb-4 overflow-x-auto no-scrollbar bg-background-light dark:bg-background-dark">
       <div className="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary px-5 shadow-md shadow-primary/20">
         <p className="text-white text-sm font-semibold leading-normal font-display">
           Tất cả

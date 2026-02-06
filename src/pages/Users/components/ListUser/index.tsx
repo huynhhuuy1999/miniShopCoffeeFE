@@ -3,8 +3,8 @@ import { ItemUser } from "../ItemUser";
 
 export const ListUser = () => {
   return (
-    <div className="mt-[47%] max-h-[600px] h-auto overflow-y-auto">
-      <div className="px-4 pt-2 pb-1">
+    <div className="mt-[47%]">
+      <div className="px-4 pb-2">
         <p className="text-gray-500 dark:text-gray-400 text-xs font-bold uppercase tracking-widest font-display">
           Danh sách (12)
         </p>

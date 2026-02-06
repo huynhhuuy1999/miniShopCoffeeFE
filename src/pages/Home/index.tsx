@@ -14,7 +14,7 @@ import { useNavigate } from "react-router";
 export const Home = () => {
   const navigate = useNavigate();
   return (
-    <>
+    <div className="relative flex min-h-screen w-full flex-col justify-between max-w-md mx-auto bg-background-light dark:bg-background-dark overflow-hidden antialiased">
       <Header />
       <Greeting />
       <TimeFilter />
@@ -70,6 +70,6 @@ export const Home = () => {
           <CardProductBest name="Latte nóng" number={60} />
         </div>
       </div>
-    </>
+    </div>
   );
 };

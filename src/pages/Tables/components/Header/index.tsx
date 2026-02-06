@@ -1,6 +1,6 @@
 export const Header = () => {
   return (
-    <header className="sticky top-0 z-30 bg-surface-light dark:bg-surface-dark px-4 py-3 shadow-[0_1px_3px_rgba(0,0,0,0.05)] flex items-center justify-between transition-colors duration-200">
+    <header className="fixed h-16 top-0 w-full max-w-md z-50 bg-white dark:bg-[#2a1a14]/95 px-4 py-3 shadow-[0_1px_3px_rgba(0,0,0,0.05)] flex items-center justify-between transition-colors duration-200">
       <div className="flex items-center gap-3">
         <h1 className="text-xl font-bold tracking-tight text-text-main dark:text-white">
           Sơ đồ bàn

@@ -1,11 +1,6 @@
 import { useState } from "react";
-import {
-  MenuFilter,
-  MenuItemCard,
-  SectionHeader,
-  SearchBar,
-} from "./components";
-import { HeaderTitle, Plus } from "@/components";
+import { MenuFilter, MenuItemCard, SectionHeader } from "./components";
+import { HeaderTitle, Plus, SearchBar } from "@/components";
 
 const MENU_ITEMS = [
   {
@@ -72,7 +67,7 @@ export const Menu = () => {
 
   const handleToggleActive = (id: string, active: boolean) => {
     setItems((prev) =>
-      prev.map((item) => (item.id === id ? { ...item, active } : item))
+      prev.map((item) => (item.id === id ? { ...item, active } : item)),
     );
   };
 
@@ -81,39 +76,34 @@ export const Menu = () => {
   };
 
   return (
-    <div className="bg-background-light dark:bg-background-dark font-display antialiased text-text-main dark:text-white">
-      <div className="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-white dark:bg-[#2a1a14] shadow-xl">
-        <header className="sticky top-0 z-50 bg-white/95 dark:bg-[#2a1a14]/95 backdrop-blur-sm border-b border-gray-100 dark:border-gray-800">
-          {/* <Header onBack={() => {}} onAdd={() => {}} /> */}
-          <HeaderTitle title="Thực đơn" />
-          <SearchBar value={search} onChange={setSearch} />
-          <MenuFilter value={filter} onChange={setFilter} />
-        </header>
-        <main className="flex-1 flex flex-col pb-20 px-4 pt-2 gap-4">
-          <SectionHeader
-            title="Món nổi bật"
-            actionLabel="Sắp xếp"
-            onAction={() => {}}
-          />
-          {items.map((item) => (
-            <MenuItemCard
-              key={item.id}
-              name={item.name}
-              description={item.description}
-              price={item.price}
-              imageUrl={item.imageUrl}
-              active={item.active}
-              soldOut={item.soldOut}
-              onToggleActive={(active) => handleToggleActive(item.id, active)}
-              onMore={() => {}}
-              onDelete={
-                item.showDelete ? () => handleDelete(item.id) : undefined
-              }
-            />
-          ))}
-        </main>
-        <Plus />
+    <div className="mx-auto max-w-md">
+      <HeaderTitle title="Thực đơn" />
+      <div className="fixed top-16 w-full max-w-md z-50 bg-white/95 dark:bg-[#2a1a14]/95 backdrop-blur-sm border-b border-gray-100 dark:border-gray-800">
+        <SearchBar value={search} onChange={setSearch} />
+        <MenuFilter value={filter} onChange={setFilter} />
       </div>
+      <div className="flex-1 flex flex-col px-4 mt-[47%] gap-4">
+        <SectionHeader
+          title="Món nổi bật"
+          actionLabel="Sắp xếp"
+          onAction={() => {}}
+        />
+        {items.map((item) => (
+          <MenuItemCard
+            key={item.id}
+            name={item.name}
+            description={item.description}
+            price={item.price}
+            imageUrl={item.imageUrl}
+            active={item.active}
+            soldOut={item.soldOut}
+            onToggleActive={(active) => handleToggleActive(item.id, active)}
+            onMore={() => {}}
+            onDelete={item.showDelete ? () => handleDelete(item.id) : undefined}
+          />
+        ))}
+      </div>
+      <Plus />
     </div>
   );
 };

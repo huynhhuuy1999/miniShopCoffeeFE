@@ -30,7 +30,7 @@ export const OrderFilter: React.FC<OrderFilterProps> = ({
   options = DEFAULT_OPTIONS,
 }) => {
   return (
-    <div className="flex gap-3 px-4 py-2 overflow-x-auto no-scrollbar w-full sticky top-[120px] z-10 bg-background-light dark:bg-background-dark pb-4">
+    <div className="flex h-auto gap-3 px-4 py-2 overflow-x-auto no-scrollbar w-full z-10 bg-background-light dark:bg-background-dark pb-4">
       {options.map((opt) => (
         <button
           key={opt.id}

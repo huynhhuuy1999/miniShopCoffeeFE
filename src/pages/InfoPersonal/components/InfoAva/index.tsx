@@ -1,6 +1,6 @@
 export const InfoAva = () => {
   return (
-    <div className="flex flex-col items-center mt-4 mb-8">
+    <div className="flex flex-col items-center mb-8">
       <div className="relative">
         <div className="w-32 h-32 rounded-full border-4 border-primary/20 p-1">
           <div
