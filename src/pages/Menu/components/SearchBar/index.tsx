@@ -22,7 +22,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
             </span>
           </div>
           <input
-            className="w-full bg-transparent border-none text-text-main dark:text-white placeholder:text-text-secondary focus:ring-0 h-full text-base font-normal leading-normal px-2 outline-none"
+            className="w-full bg-transparent border-none text-blackCustom dark:text-white placeholder:text-text-secondary focus:ring-0 h-full text-base font-normal leading-normal px-2 outline-none"
             placeholder={placeholder}
             value={value}
             onChange={(e) => onChange?.(e.target.value)}

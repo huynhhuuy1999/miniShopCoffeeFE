@@ -6,7 +6,7 @@ export const EmptyState = () => {
           local_cafe
         </span>
       </div>
-      <h3 className="text-text-main dark:text-white font-bold text-lg mb-1">
+      <h3 className="text-blackCustom dark:text-white font-bold text-lg mb-1">
         Chưa có đơn hàng nào
       </h3>
       <p className="text-text-sub text-center text-sm">

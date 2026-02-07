@@ -18,7 +18,7 @@ export const ItemUser: React.FC<IItemUser> = ({ bg, name, typeUser }) => {
           }}
         ></div>
         <div className="flex flex-col justify-center">
-          <p className="text-[#181311] dark:text-white text-base font-bold leading-tight font-display">
+          <p className="text-blackCustom dark:text-white text-base font-bold leading-tight font-display">
             {name}
           </p>
           <div className="flex items-center gap-1 mt-1">

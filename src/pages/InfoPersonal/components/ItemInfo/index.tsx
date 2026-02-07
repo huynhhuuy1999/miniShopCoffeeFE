@@ -15,7 +15,7 @@ export const ItemInfo: React.FC<IItemInfo> = ({ icon, title, value }) => {
           <p className="text-[10px] font-bold text-text-secondary uppercase tracking-widest">
             {title}
           </p>
-          <p className="text-base font-medium text-text-main dark:text-gray-200">
+          <p className="text-base font-medium text-blackCustom dark:text-gray-200">
             {value}
           </p>
         </div>

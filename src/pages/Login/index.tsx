@@ -101,12 +101,19 @@ export const Login = () => {
             />
           </label>
           {/* <!-- Forgot Password --> */}
-          <div className="flex justify-end">
+
+          <div className="flex justify-between">
+            <a
+              className="text-primary hover:text-primary/80 text-sm font-medium leading-normal transition-colors"
+              href="/create-user"
+            >
+              Tạo tài khoản
+            </a>
             <a
               className="text-primary hover:text-primary/80 text-sm font-medium leading-normal transition-colors"
               href="#"
             >
-              Forgot Password?
+              Quên mật khẩu
             </a>
           </div>
           {error && (

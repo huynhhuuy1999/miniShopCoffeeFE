@@ -4,10 +4,6 @@ import { useEffect } from "react";
 import { FilterUser, ListUser, Search } from "./components";
 
 export const Users = () => {
-  // const { loading, error, fetchUsers, users } = useUser();
-  // useEffect(() => {
-  //   fetchUsers();
-  // }, []);
   return (
     <div className="mx-auto max-w-md relative overflow-x-hidden">
       <HeaderTitle title="Quản lý Người dùng" />

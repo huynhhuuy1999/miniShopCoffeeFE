@@ -1,5 +1,5 @@
 const iosInputStyle =
-  "@apply w-full bg-[#f4f1f0] dark:bg-white/5 border-none rounded-xl h-14 px-4 text-text-main dark:text-white placeholder:text-text-secondary focus:ring-2 focus:ring-primary/50 transition-all;";
+  "@apply w-full bg-[#f4f1f0] dark:bg-white/5 border-none rounded-xl h-14 px-4 text-blackCustom dark:text-white placeholder:text-text-secondary focus:ring-2 focus:ring-primary/50 transition-all;";
 
 export const GroupInput = () => {
   return (

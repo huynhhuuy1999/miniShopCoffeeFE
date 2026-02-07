@@ -20,7 +20,7 @@ export const InfoAva = () => {
           </span>
         </button>
       </div>
-      <h2 className="mt-4 text-2xl font-bold text-text-main dark:text-white">
+      <h2 className="mt-4 text-2xl font-bold text-blackCustom dark:text-white">
         Nguyễn Minh Tuấn
       </h2>
       <div className="mt-1 px-3 py-1 bg-primary/10 text-primary rounded-full">

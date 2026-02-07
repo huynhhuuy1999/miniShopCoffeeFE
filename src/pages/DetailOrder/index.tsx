@@ -7,7 +7,6 @@ import {
   PaymentSummary,
   StatusCard,
 } from "./components";
-import { HeaderTitle } from "@/components";
 
 const ORDER_DATA = {
   orderId: "1234",
@@ -64,8 +63,7 @@ export const DetailOrder = () => {
   return (
     <div className="bg-background-light dark:bg-background-dark text-blackCustom dark:text-gray-100">
       <div className="relative flex mx-auto h-full min-h-screen w-full flex-col overflow-x-hidden pb-24 max-w-md">
-        <HeaderTitle title={`Đơn hàng${displayOrderId}`} />
-        <div className="mt-16">
+        <div>
           <StatusCard
             statusLabel={statusLabel}
             tableName={tableName}

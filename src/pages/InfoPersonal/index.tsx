@@ -1,4 +1,4 @@
-import { ButtonCustom, HeaderTitle } from "@/components";
+import { ButtonCustom } from "@/components";
 import { FuncGroup, Info, InfoAva } from "./components";
 import { useNavigate } from "react-router";
 
@@ -6,13 +6,12 @@ export const InfoPersonal = () => {
   const navigate = useNavigate();
   return (
     <div className="bg-background-light dark:bg-background-dark">
-      <div className="relative flex h-full overflow-hidden min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-background-light dark:bg-background-dark font-display antialiased shadow-xl dark:text-white">
-        <HeaderTitle title="Hồ sơ cá nhân" />
-        <div className="flex-1 flex flex-col px-6 pt-18 pb-10 relative">
+      <div className="relative flex h-full overflow-y-hidden min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-background-light dark:bg-background-dark font-display antialiased shadow-xl dark:text-white">
+        <div className="flex-1 flex flex-col pt-5 px-6 relative">
           <InfoAva />
           <Info />
           <FuncGroup />
-          <div className="mt-auto pt-10">
+          <div className="mt-6">
             <ButtonCustom
               text="Chỉnh sửa thông tin"
               icon={<span className="material-symbols-outlined">edit</span>}

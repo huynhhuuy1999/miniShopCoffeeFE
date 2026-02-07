@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { MenuFilter, MenuItemCard, SectionHeader } from "./components";
-import { HeaderTitle, Plus, SearchBar } from "@/components";
+import { MenuFilter, MenuItemCard, SectionHeader, AddMenu } from "./components";
+import { HeaderTitle, Modal, Plus, SearchBar } from "@/components";
 
 const MENU_ITEMS = [
   {
@@ -64,6 +64,7 @@ export const Menu = () => {
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState("all");
   const [items, setItems] = useState(MENU_ITEMS);
+  const [showModal, setShowModal] = useState(false);
 
   const handleToggleActive = (id: string, active: boolean) => {
     setItems((prev) =>
@@ -103,7 +104,15 @@ export const Menu = () => {
           />
         ))}
       </div>
-      <Plus />
+      <Plus onClick={() => setShowModal(true)} />
+
+      <Modal
+        open={showModal}
+        onClose={() => setShowModal(false)}
+        title="Thêm Món Mới"
+      >
+        <AddMenu />
+      </Modal>
     </div>
   );
 };

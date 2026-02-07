@@ -46,8 +46,8 @@ export const MenuItemCard: React.FC<MenuItemCardProps> = ({
           <h3
             className={`text-base leading-tight truncate pr-2 ${
               soldOut
-                ? "text-text-main dark:text-gray-400 line-through decoration-gray-400 font-medium"
-                : "text-text-main dark:text-white font-bold"
+                ? "text-blackCustom dark:text-gray-400 line-through decoration-gray-400 font-medium"
+                : "text-blackCustom dark:text-white font-bold"
             }`}
           >
             {name}

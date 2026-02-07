@@ -1,12 +1,11 @@
-import { ButtonCustom, HeaderTitle } from "@/components";
+import { ButtonCustom } from "@/components";
 import { GroupInput, InfoAva } from "./components";
 
 export const UpdateUser = () => {
   return (
-    <div className="bg-background-light dark:bg-background-dark font-display antialiased text-text-main dark:text-white">
-      <div className="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-background-light dark:bg-background-dark font-display antialiased text-text-main dark:text-white shadow-xl">
-        <HeaderTitle title="Thông tin cá nhân" />
-        <div className="flex-1 flex flex-col p-6 gap-8 relative pt-18">
+    <div className="bg-background-light dark:bg-background-dark font-display antialiased text-blackCustom dark:text-white">
+      <div className="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-background-light dark:bg-background-dark font-display antialiased text-blackCustom dark:text-white shadow-xl">
+        <div className="flex-1 flex flex-col p-6 gap-8 relative">
           <InfoAva />
           <GroupInput />
           <div className="flex flex-col gap-3 mt-4">

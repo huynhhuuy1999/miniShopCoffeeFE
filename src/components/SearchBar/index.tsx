@@ -19,7 +19,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
         </div>
         <input
           className="block w-full p-3 pl-10 text-sm  bg-white
-          text-text-main dark:text-white dark:bg-transparent
+          text-blackCustom dark:text-white dark:bg-transparent
           rounded-xl border-none shadow-sm ring-1 ring-gray-100 dark:ring-white/5 
           focus:ring-2 focus:ring-primary focus:outline-none placeholder:text-text-sub 
           dark:placeholder:text-white/40"

@@ -1,8 +1,4 @@
-export type OrderStatus =
-  | "pending"
-  | "preparing"
-  | "completed"
-  | "cancelled";
+export type OrderStatus = "pending" | "preparing" | "completed" | "cancelled";
 
 const STATUS_CONFIG: Record<
   OrderStatus,
@@ -72,23 +68,25 @@ export const OrderCard: React.FC<OrderCardProps> = ({
       role="button"
       tabIndex={0}
       className={`flex flex-col bg-white dark:bg-card-dark rounded-xl p-4 shadow-sm border border-gray-100 dark:border-white/5 active:scale-[0.98] transition-transform duration-100 cursor-pointer ${
-        isCancelled ? "opacity-75 grayscale-[0.8]" : status === "completed" ? "opacity-90" : ""
+        isCancelled
+          ? "opacity-75 grayscale-[0.8]"
+          : status === "completed"
+            ? "opacity-90"
+            : ""
       }`}
       onClick={onClick}
       onKeyDown={(e) => e.key === "Enter" && onClick?.()}
     >
       <div className="flex justify-between items-start mb-3 border-b border-gray-50 dark:border-white/5 pb-3">
         <div className="flex items-center gap-2">
-          <span
-            className={`${config.iconBg} p-1.5 rounded-lg`}
-          >
+          <span className={`${config.iconBg} p-1.5 rounded-lg`}>
             <span className="material-symbols-outlined text-[18px]">
               {config.icon}
             </span>
           </span>
           <div>
             <h3
-              className={`text-text-main dark:text-white text-base font-bold ${
+              className={`text-blackCustom dark:text-white text-base font-bold ${
                 isCancelled ? "line-through decoration-slate-400" : ""
               }`}
             >
@@ -105,11 +103,8 @@ export const OrderCard: React.FC<OrderCardProps> = ({
       </div>
       <div className="space-y-1 mb-3">
         {items.map((item, i) => (
-          <div
-            key={i}
-            className="flex justify-between items-center text-sm"
-          >
-            <span className="text-text-main dark:text-gray-200">{item}</span>
+          <div key={i} className="flex justify-between items-center text-sm">
+            <span className="text-blackCustom dark:text-gray-200">{item}</span>
           </div>
         ))}
       </div>
@@ -120,7 +115,9 @@ export const OrderCard: React.FC<OrderCardProps> = ({
         </div>
         <span
           className={`text-lg font-bold ${
-            status === "pending" ? "text-primary" : "text-text-main dark:text-white"
+            status === "pending"
+              ? "text-primary"
+              : "text-blackCustom dark:text-white"
           }`}
         >
           {total}

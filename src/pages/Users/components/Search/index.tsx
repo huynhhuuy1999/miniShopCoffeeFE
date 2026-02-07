@@ -7,7 +7,7 @@ export const Search = () => {
             <span className="material-symbols-outlined">search</span>
           </div>
           <input
-            className="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-xl text-[#181311] dark:text-white focus:outline-0 focus:ring-0 border-none bg-white dark:bg-[#332520] h-full placeholder:text-gray-400 px-4 pl-2 text-base font-normal leading-normal font-display"
+            className="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-xl text-blackCustom dark:text-white focus:outline-0 focus:ring-0 border-none bg-white dark:bg-[#332520] h-full placeholder:text-gray-400 px-4 pl-2 text-base font-normal leading-normal font-display"
             placeholder="Tìm kiếm nhân viên..."
             value=""
           />

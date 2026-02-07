@@ -1,18 +1,19 @@
 import { useState } from "react";
 import type { FilterValue } from "./components/TableFilter";
-import { Header, TableCard, TableFilter } from "./components";
-import { Plus } from "@/components";
+import { AddTable, Header, TableCard, TableFilter } from "./components";
+import { Modal, Plus } from "@/components";
 import { useNavigate } from "react-router";
 
 export const Table = () => {
   const navigate = useNavigate();
   const [filter, setFilter] = useState<FilterValue>("all");
+  const [showModal, setShowModal] = useState<boolean>(false);
   const onClickTable = (idOrder: string) => {
     navigate(`/orders/${idOrder}`);
   };
 
   return (
-    <div className="bg-background-light dark:bg-background-dark font-display text-text-main dark:text-white overflow-x-hidden min-h-screen flex flex-col antialiased selection:bg-primary selection:text-white">
+    <div className="bg-background-light dark:bg-background-dark font-display text-blackCustom dark:text-white overflow-x-hidden min-h-screen flex flex-col antialiased selection:bg-primary selection:text-white">
       <Header />
       <TableFilter value={filter} onChange={setFilter} />
       <div className="flex-1 px-4 mt-[38%]">
@@ -45,7 +46,16 @@ export const Table = () => {
         </div>
       </div>
 
-      <Plus />
+      <Plus onClick={() => setShowModal(!showModal)} />
+      <Modal
+        open={showModal}
+        onClose={() => {
+          setShowModal(false);
+        }}
+        title="Thêm bàn mới"
+      >
+        <AddTable />
+      </Modal>
     </div>
   );
 };

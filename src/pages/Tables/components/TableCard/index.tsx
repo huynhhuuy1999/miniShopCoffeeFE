@@ -73,7 +73,7 @@ export const TableCard: React.FC<TableCardProps> = ({
         </span>
       </div>
       <div>
-        <h3 className="text-lg font-bold text-text-main dark:text-white">
+        <h3 className="text-lg font-bold text-blackCustom dark:text-white">
           {name}
         </h3>
         <div className="mt-2 flex items-center gap-1.5 text-xs font-medium text-text-muted">
