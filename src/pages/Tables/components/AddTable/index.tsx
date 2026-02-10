@@ -1,6 +1,13 @@
 import { ButtonCustom } from "@/components";
+import { useState } from "react";
 
-export const AddTable = () => {
+interface AddTableProps {
+  onSave?: (text: string) => void;
+  onCancel?: () => void;
+}
+
+export const AddTable: React.FC<AddTableProps> = ({ onSave, onCancel }) => {
+  const [text, setText] = useState<string>("");
   return (
     <>
       {/* <!-- Modal Popup Container --> */}
@@ -21,7 +28,8 @@ export const AddTable = () => {
                 className="form-input flex w-full rounded-lg text-blackCustom dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#e6dedb] dark:border-gray-700 bg-white dark:bg-background-dark h-14 placeholder:text-[#896b61] p-[15px] text-base font-normal"
                 placeholder="Ví dụ: 01, 02..."
                 type="text"
-                value=""
+                value={text}
+                onChange={(e) => setText(e.target.value)}
               />
               <span className="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm">
                 edit
@@ -33,12 +41,16 @@ export const AddTable = () => {
           <div className="flex flex-col gap-3">
             <ButtonCustom
               text="Lưu bàn mới"
-              onClick={() => {}}
+              onClick={() => {
+                onSave && onSave(text);
+              }}
               className="text-base!"
             />
             <ButtonCustom
               text="Hủy bỏ"
-              onClick={() => {}}
+              onClick={() => {
+                onCancel && onCancel();
+              }}
               className="text-base! bg-transparent text-[#896b61]! dark:text-gray-400! hover:bg-gray-50 dark:hover:bg-gray-800/30"
             />
           </div>

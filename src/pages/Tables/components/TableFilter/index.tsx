@@ -1,24 +1,24 @@
-export type FilterValue = "all" | "empty" | "occupied";
+import { TABLE_STATUS } from "@/constants";
 
 export interface TableFilterOption {
-  value: FilterValue;
+  value: string;
   label: string;
 }
 
 const DEFAULT_OPTIONS: TableFilterOption[] = [
-  { value: "all", label: "Tất cả (15)" },
-  { value: "empty", label: "Trống (8)" },
-  { value: "occupied", label: "Có khách (7)" },
+  { value: "all", label: "Tất cả" },
+  { value: TABLE_STATUS.AVAILABLE, label: "Trống" },
+  { value: TABLE_STATUS.OCCUPIED, label: "Có khách" },
 ];
 
 export interface TableFilterProps {
-  value?: FilterValue;
-  onChange?: (value: FilterValue) => void;
+  value: string;
+  onChange?: (value: string) => void;
   options?: TableFilterOption[];
 }
 
 export const TableFilter: React.FC<TableFilterProps> = ({
-  value = "all",
+  value = undefined,
   onChange,
   options = DEFAULT_OPTIONS,
 }) => {

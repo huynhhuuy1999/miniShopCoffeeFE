@@ -16,3 +16,25 @@ export const TYPE_USER = {
   ADMIN: 1,
   STAFF: 2,
 };
+
+export const ROLE = {
+  STAFF: "staff",
+  ADMIN: "admin",
+};
+
+export const TABLE_STATUS = {
+  AVAILABLE: "available",
+  OCCUPIED: "occupied",
+};
+
+export const ORDER_STATUS = {
+  PENDING: "pending",
+  SERVING: "serving",
+  COMPLETED: "completed",
+  CANCELLED: "cancelled",
+};
+
+export const TYPE_ORDER = {
+  BRING_BACK: "BringBack",
+  AT_SHOP: "AtShop",
+};
